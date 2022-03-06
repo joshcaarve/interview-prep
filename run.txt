@@ -1,0 +1,17 @@
+minikube start
+minikube addons enable ingress
+
+eval $(minikube docker-env)
+export IMAGE_NAME='api:0.0.1'
+docker build -t $IMAGE_NAME . --no-cache
+docker build -t $IMAGE_NAME .
+
+k delete pod busybox
+kubectl run -i --tty busybox --image=busybox --restart=Never
+
+
+http://api-svc.api-ns.svc.cluster.local:8080
+
+-o yaml  
+
+k get service api-svc -o yaml
