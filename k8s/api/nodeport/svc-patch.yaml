@@ -6,8 +6,7 @@ metadata:
   labels:
     app: api
 spec:
-  type: ClusterIP
-  #clusterIP: None
+  type: NodePort
   selector:
     app: api
   ports:
@@ -15,3 +14,4 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 8080
+      nodePort: 30008

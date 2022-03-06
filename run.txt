@@ -10,8 +10,13 @@ k delete pod busybox
 kubectl run -i --tty busybox --image=busybox --restart=Never
 
 
+k logs api-584994fd4f-8xzlt 
+
 http://api-svc.api-ns.svc.cluster.local:8080
 
+wget http://api-svc.api-ns.svc.cluster.local:80
 -o yaml  
 
 k get service api-svc -o yaml
+
+minikube service api-svc --url

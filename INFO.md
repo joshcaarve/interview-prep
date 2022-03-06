@@ -15,6 +15,10 @@ trace each request
 
 
 ## tcpdump
+tcpdump -n host 1xx.13x.62.1 and port 22
 
+## Load Balancing algorithms
 
-export IMAGE_NAME='api:0.0.1'
+### round robin
+
+### weighted round robin

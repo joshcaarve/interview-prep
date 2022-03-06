@@ -17,15 +17,15 @@ metadata:
   name: api-svc
   namespace: api-ns
 spec:
-  clusterIP: None
   ports:
-  - name: http-http
+  - name: http-api
+    nodePort: 30008
     port: 80
     protocol: TCP
     targetPort: 8080
   selector:
     app: api
-  type: ClusterIP
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -35,7 +35,7 @@ metadata:
   name: api
   namespace: api-ns
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: api

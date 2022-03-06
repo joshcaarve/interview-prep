@@ -9,3 +9,8 @@ alias kgep="kubectl get endpoints"
 alias kgj="kubectl get jobs"
 alias kgcj="kubectl get cronjob"
 alias kgns="kubectl get ns"
+
+alias busybox="kubectl run -i --tty busybox --image=busybox --restart=Never"
+alias busydel="kubectl delete pod busybox"
+
+alias api="k get pods -o name | cut -d "/" -f2 | grep api"
