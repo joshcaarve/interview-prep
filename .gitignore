@@ -8,3 +8,8 @@
 terraform.tfstate
 usage.yaml
 .terraform
+.terraform.tfstate.lock.info
+terraform.tfstate.backup
+terraform.tfstate.backup
+kong/
+gloo/

@@ -17,7 +17,7 @@ resource "helm_release" "ingress_nginx" {
 
   values = [file("nginx-ingress.yaml")]
 
-  depends_on = [kind_cluster.jke-1]
+  # depends_on = [kind_cluster.jke-1]
 }
 
 resource "null_resource" "wait_for_ingress_nginx" {

@@ -1,4 +1,7 @@
 
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.1.0/aio/deploy/recommended.yaml
+
+
 export IMAGE_NAME='api:0.0.1'
 docker build -t $IMAGE_NAME . --no-cache
 docker build -t $IMAGE_NAME .
