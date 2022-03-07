@@ -2,13 +2,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  namespace: ingress-nginx
   name: jke-1-ingress
 spec:
   rules:
   - http:
       paths:
       - pathType: Prefix
-        path: "/ping"
+        path: "/"
         backend:
           service:
             name: api-svc

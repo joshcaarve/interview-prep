@@ -7,11 +7,9 @@ metadata:
     app: api
 spec:
   type: ClusterIP
-  #clusterIP: None
   selector:
     app: api
   ports:
-    - name: http-api
-      protocol: TCP
-      port: 80
-      targetPort: 8080
+    protocol: TCP
+    port: 80
+    targetPort: 8080

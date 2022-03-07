@@ -5,7 +5,7 @@ kind: Kustomization
 resources:
 - ../base
 
-namespace: api-ns
+namespace: api
 
 images:
 - name: api

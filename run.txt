@@ -13,6 +13,8 @@ http://api-svc.api-ns.svc.cluster.local:8080
 
 wget http://api-svc.api-ns.svc.cluster.local:80/ping
 
+k get all --all-namespaces
+
 
 -o yaml  
 
@@ -23,9 +25,4 @@ kubectl cluster-info --context jke-1
 
 
 
----tf---
-./demo.sh
-
 kubectl get all -A
-
-terraform destroy -auto-approve

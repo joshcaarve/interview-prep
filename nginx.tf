@@ -15,9 +15,9 @@ resource "helm_release" "ingress_nginx" {
   namespace        = var.ingress_nginx_namespace
   create_namespace = true
 
-  values = [file("nginx.yaml")]
+  values = [file("nginx-ingress.yaml")]
 
-  depends_on = [kind_cluster.default]
+  depends_on = [kind_cluster.jke-1]
 }
 
 resource "null_resource" "wait_for_ingress_nginx" {

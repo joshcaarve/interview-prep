@@ -5,7 +5,7 @@ provider "kubernetes" {
   config_path = pathexpand(var.kind_cluster_config_path)
 }
 
-resource "kind_cluster" "default" {
+resource "kind_cluster" "jke-1" {
   name            = var.kind_cluster_name
   kubeconfig_path = pathexpand(var.kind_cluster_config_path)
   wait_for_ready  = true
