@@ -3,8 +3,12 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.1.0/a
 
 
 export IMAGE_NAME='api:0.0.1'
+
+export SERVER_IMAGE='server:0.0.1'
+
+
 docker build -t $IMAGE_NAME . --no-cache
-docker build -t $IMAGE_NAME .
+docker build -t $SERVER_IMAGE .
 
 k delete pod busybox
 kubectl run -i --tty busybox --image=busybox --restart=Never
@@ -26,6 +30,6 @@ kind create cluster --config=cluster/base/jke-1.yaml
 kind load docker-image api:0.0.1 --name jke-1
 kubectl cluster-info --context jke-1
 
-
+kind load docker-image server:0.0.1 --name jke-1
 
 kubectl get all -A
