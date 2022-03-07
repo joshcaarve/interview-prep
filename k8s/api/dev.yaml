@@ -19,13 +19,12 @@ metadata:
 spec:
   ports:
   - name: http-api
-    nodePort: 30008
     port: 80
     protocol: TCP
     targetPort: 8080
   selector:
     app: api
-  type: NodePort
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
