@@ -38,7 +38,23 @@ $ kustomize build dev > dev.yaml
 $ kubectl apply -f dev.yaml
 ```
 
-## Haproxy
+## Using aliases
+
+```
+$ source k8s-alias.sh
+```
+
+## Using Busybox (with alias) to test connections inside cluster
+
+```
+$ busybox
+# wget http://api-svc.api.svc.cluster.local
+# cat index.html
+# exit 0
+$ busydel
+```
+
+## Haproxy (unrelated to everything else, but there for fun)
 
 ```
 haproxy -f tcp.cfg
