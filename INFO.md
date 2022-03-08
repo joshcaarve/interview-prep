@@ -22,3 +22,9 @@ tcpdump -n host 1xx.13x.62.1 and port 22
 ### round robin
 
 ### weighted round robin
+
+### Network Adress transalation
+
+### Layer 4 vs Layer 7
+
+### Reverse Proxy
