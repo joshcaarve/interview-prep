@@ -16,7 +16,8 @@ gloo/
 k8s/api/dev.yaml
 k8s/api/nodeport.yaml
 k8s/api/headless.yaml
-
 k8s/server/dev.yaml
-
 **/*.DS_Store
+INFO.md
+run.txt
+info.txt
