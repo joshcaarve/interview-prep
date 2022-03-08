@@ -1,4 +1,9 @@
 # interview-prep
+Deploy a K8s cluster locally
+
+Deploy an ingress controller
+
+Gain access to an api from outside the cluster
 
 ## Deploy Kind using Terraform
 
