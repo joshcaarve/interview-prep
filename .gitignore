@@ -1,15 +1,23 @@
-# Binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
 *.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
+terraform.tfstate
+usage.yaml
+.terraform
+.terraform.tfstate.lock.info
+terraform.tfstate.backup
+terraform.tfstate.backup
+kong/
+gloo/
+k8s/api/dev.yaml
+k8s/api/nodeport.yaml
+k8s/api/headless.yaml
+k8s/server/dev.yaml
+**/*.DS_Store
+INFO.md
+run.txt
+info.txt
