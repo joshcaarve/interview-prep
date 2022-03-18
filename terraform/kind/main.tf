@@ -1,13 +1,18 @@
-provider "kind" {
+variable "cluster_config_path" {
+  type        = string
+  description = "The location where this cluster's kubeconfig will be saved to."
+  default     = "~/.kube/config"
 }
 
+provider "kind" {}
+
 provider "kubernetes" {
-  config_path = pathexpand(var.kind_cluster_config_path)
+  config_path = pathexpand(var.cluster_config_path)
 }
 
 resource "kind_cluster" "jke-1" {
-  name            = var.kind_cluster_name
-  kubeconfig_path = pathexpand(var.kind_cluster_config_path)
+  name            = "jke-1"
+  kubeconfig_path = pathexpand(var.cluster_config_path)
   wait_for_ready  = true
 
   kind_config {
@@ -29,7 +34,6 @@ resource "kind_cluster" "jke-1" {
         host_port      = 443
       }
     }
-
     node {
       role = "worker"
     }
