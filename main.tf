@@ -22,8 +22,10 @@ module "docker_image" {
   ]
 }
 
-# couldn't create a module because of for_each error
-# defining resources and data here
+# has to be run after because of how the kubeconfig works
+#
+# also couldn't create a module because of for_each error
+# so I'm just defining resources and data here
 data "kustomization_build" "api" {
   path     = "./k8s/api/dev"
 }
