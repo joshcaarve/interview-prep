@@ -10,12 +10,17 @@ variable "ingress_nginx_namespace" {
   default     = "ingress-nginx"
 }
 
+variable "chart_version" {
+  type = string
+  default = "4.0.6"
+}
+
 resource "helm_release" "ingress_nginx" {
   provider   = helm.main
   name       = "ingress-nginx"
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
-  version    = "4.0.6"
+  version    = var.chart_version
 
   namespace        = var.ingress_nginx_namespace
   create_namespace = true
@@ -25,7 +30,7 @@ resource "helm_release" "ingress_nginx" {
 
 resource "null_resource" "wait_for_ingress_nginx" {
   triggers = {
-    key = uuid()
+    ingress_nginx = join(",", [var.chart_version])
   }
 
   provisioner "local-exec" {
@@ -37,6 +42,5 @@ resource "null_resource" "wait_for_ingress_nginx" {
         --timeout=90s
     EOF
   }
-
   depends_on = [helm_release.ingress_nginx]
 }

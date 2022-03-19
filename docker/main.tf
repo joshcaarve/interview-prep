@@ -30,7 +30,7 @@ resource "docker_image" "api" {
 
 resource "null_resource" "load_image_into_kind" {
   triggers = {
-    key = uuid()
+    image_tag = join(",", var.image_tags, [var.image_name])
   }
 
   provisioner "local-exec" {

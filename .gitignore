@@ -21,3 +21,4 @@ k8s/server/dev.yaml
 INFO.md
 run.txt
 info.txt
+kustomize/

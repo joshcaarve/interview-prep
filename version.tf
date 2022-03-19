@@ -46,8 +46,7 @@ provider "helm" {
   }
 }
 
-
 provider "kustomization" {
-  alias           = "main"
+  //alias           = "main"
   kubeconfig_path = pathexpand("~/.kube/config")
 }
