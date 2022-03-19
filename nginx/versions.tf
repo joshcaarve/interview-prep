@@ -1,11 +1,5 @@
-# versions.tf
-
 terraform {
   required_providers {
-    kind = {
-      source  = "kyma-incubator/kind"
-      version = "0.0.9"
-    }
 
     kubernetes = {
       source  = "hashicorp/kubernetes"
@@ -13,8 +7,9 @@ terraform {
     }
 
     helm = {
-      source  = "hashicorp/helm"
-      version = "2.3.0"
+      source                = "hashicorp/helm"
+      version               = "2.3.0"
+      configuration_aliases = [helm.main]
     }
 
     null = {

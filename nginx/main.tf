@@ -10,13 +10,8 @@ variable "ingress_nginx_namespace" {
   default     = "ingress-nginx"
 }
 
-provider "helm" {
-  kubernetes {
-    config_path = pathexpand(var.cluster_config_path)
-  }
-}
-
 resource "helm_release" "ingress_nginx" {
+  provider   = helm.main
   name       = "ingress-nginx"
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
@@ -25,7 +20,7 @@ resource "helm_release" "ingress_nginx" {
   namespace        = var.ingress_nginx_namespace
   create_namespace = true
 
-  values = [file("nginx-ingress.yaml")]
+  values = [file("./nginx/nginx-ingress.yaml")]
 }
 
 resource "null_resource" "wait_for_ingress_nginx" {

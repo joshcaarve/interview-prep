@@ -4,8 +4,6 @@ variable "cluster_config_path" {
   default     = "~/.kube/config"
 }
 
-provider "kind" {}
-
 provider "kubernetes" {
   config_path = pathexpand(var.cluster_config_path)
 }
