@@ -2,6 +2,7 @@ module "kind_cluster" {
   source = "./kind"
 }
 
+
 module "nginx" {
   source = "./nginx"
   providers = {
@@ -12,6 +13,7 @@ module "nginx" {
   ]
 }
 
+/*
 module "docker_image" {
   source = "./docker"
   providers = {
@@ -40,3 +42,4 @@ resource "kustomization_resource" "api" {
     module.docker_image
   ]
 }
+*/

@@ -9,6 +9,8 @@ alias kgep="kubectl get endpoints"
 alias kgj="kubectl get jobs"
 alias kgcj="kubectl get cronjob"
 alias kgns="kubectl get ns"
+alias kgpa="kubectl get pods --all-namespaces"
+
 
 alias busybox="kubectl run -i --tty busybox --image=busybox --restart=Never"
 alias busydel="kubectl delete pod busybox"
