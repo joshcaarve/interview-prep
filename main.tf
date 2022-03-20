@@ -13,6 +13,15 @@ module "nginx" {
   ]
 }
 
+module certs {
+  source = "./certs"
+  
+}
+
+
+
+
+
 /*
 module "docker_image" {
   source = "./docker"

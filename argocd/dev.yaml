@@ -9305,6 +9305,7 @@ spec:
     targetPort: 8080
   selector:
     app.kubernetes.io/name: argocd-server
+  type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
@@ -10179,11 +10180,10 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
   name: argocd-ingress
   namespace: argocd
 spec:
+  ingressClassName: nginx-argocd
   rules:
   - http:
       paths:
@@ -10192,7 +10192,7 @@ spec:
             name: argocd-server
             port:
               number: 80
-        path: /argocd
+        path: /
         pathType: Prefix
 ---
 apiVersion: networking.k8s.io/v1

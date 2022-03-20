@@ -4,14 +4,15 @@ kind: Ingress
 metadata:
   namespace: argocd
   name: argocd-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  #annotations:
+  #  nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx-argocd
   rules:
   - http:
       paths:
-      - pathType: Prefix
-        path: "/argocd"
+      - path: "/"
+        pathType: Prefix
         backend:
           service:
             name: argocd-server
