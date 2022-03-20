@@ -64,3 +64,17 @@ $ busydel
 ```
 haproxy -f tcp.cfg
 ```
+
+## misc
+
+if you deleted crds before a resource you will have pending deletion resources
+
+
+kustomize build . > dot.yaml
+kustomize build dev > dev.yaml
+
+kubectl apply -f dot.yaml
+kubectl apply -f dev.yaml
+
+argocd initial password
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode; echo
