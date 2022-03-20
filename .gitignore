@@ -25,3 +25,4 @@ kustomize/
 argocd/notes.txt
 kbuild.sh
 .etc_fake
+deploy/api/dev.yaml
