@@ -1,9 +1,9 @@
 module "kind_cluster" {
-  source = "./kind"
+  source = "./modules/kind"
 }
 
 module "nginx" {
-  source = "./nginx"
+  source = "./modules/nginx"
   providers = {
     helm.main = helm.main
   }
@@ -20,7 +20,7 @@ module certs {
 */
 
 module "docker_image" {
-  source = "./docker"
+  source = "./modules/docker"
   providers = {
     docker.docker_desktop = docker.docker_desktop
   }

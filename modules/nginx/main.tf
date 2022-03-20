@@ -25,7 +25,7 @@ resource "helm_release" "ingress_nginx" {
   namespace        = var.ingress_nginx_namespace
   create_namespace = true
 
-  values = [file("./nginx/nginx-ingress.yaml")]
+  values = [file("./modules/nginx/nginx-ingress.yaml")]  # TODO: variable
 }
 
 resource "null_resource" "wait_for_ingress_nginx" {
