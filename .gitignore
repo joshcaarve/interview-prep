@@ -23,3 +23,5 @@ run.txt
 info.txt
 kustomize/
 argocd/notes.txt
+kbuild.sh
+.etc_fake

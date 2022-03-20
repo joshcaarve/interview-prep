@@ -12,12 +12,12 @@ module "nginx" {
     module.kind_cluster
   ]
 }
-
+/*
 module certs {
   source = "./certs"
   
 }
-
+*/
 
 
 
