@@ -13,4 +13,4 @@ spec:
   source:
     path: deploy/api/dev
     repoURL: https://github.com/joshcaarve/interview-prep.git
-    targetRevision: cleanup
+    targetRevision: HEAD

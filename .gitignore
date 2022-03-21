@@ -24,5 +24,6 @@ info.txt
 kustomize/
 argocd/notes.txt
 kbuild.sh
-.etc_fake
 deploy/api/dev.yaml
+install_argo.sh
+main.sh
